@@ -1,12 +1,11 @@
 # Packet-Sniffer
-Sniff Packet from Devices on Network
-# Run Script
+A Tool Written IN Pytohn3 That Sniff Data The Interface You Select
+# Download And Run This Tool
 - git clone https://github.com/DEMON1A/Packet-Sniffer
 - cd Packet-Sniffer
 - python3 Packet_sniffer.py
-# Note
-- You can run Man in the middle attack with this tool and ARP-SP00FER 
-- Download my ARP-SP00FER and select victam
-- go to packet-sniffer and select interface
-- You can see what victam do and websites he visit
-- I am not responsible for a bad use of the privacy of others
+# Notes
+- You can run MITM With This Tool and Any Arp Spoofer! 
+- Download Any Arp Spoofer and Spoof victim To Start Sniff Data
+- Go to packet-sniffer and select The Interface
+- Wait For Victim To Make Trafic In Network!
