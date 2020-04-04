@@ -7,3 +7,5 @@ A Tool Written IN Python3 That Sniff Data From The Interface You Select
 # Usage
 - You Can Use This Tool To Run MITM With Any ARP Spoof Tool! 
 - Go to Packet-Sniffer And Select The Interface You Want To Sniff Data From
+# View
+![](View/View.png)
