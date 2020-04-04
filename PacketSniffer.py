@@ -39,7 +39,7 @@ def GetLoginDataFromSites(packet):
 def SniffNetworkTrafic(packet):
 	if packet.haslayer(http.HTTPRequest):# Check IF This Request Is HTTP Request IF true Complete This Statment!
 		HTTPData = GetDataFromHTTP(packet) 
-		print("[+] HTTP REQUEST >>" + HTTPData) # Tell You That There Is A Traffic On Port 80 (HTTP Port)
+		print("[+] HTTP REQUEST >>" + str(HTTPData)) # Tell You That There Is A Traffic On Port 80 (HTTP Port)
 
 		LoginData = GetLoginDataFromSites(packet)
 		if LoginData: # If Login Data Returns 'True' Then Do That Print Function
