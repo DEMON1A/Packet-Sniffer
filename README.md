@@ -1,5 +1,5 @@
 # Packet-Sniffer
-- A Tool Written IN Python3 That Sniff Data From The Interface You Select
+- A Tool Written IN Python3 That Sniff Data On HTTP Protocol From The Interface You Select
 # Download And Run This Tool
 - git clone https://github.com/DEMON1A/Packet-Sniffer
 - cd Packet-Sniffer
