@@ -2,7 +2,7 @@
 '''
 This Tool Realeted To Zaid Sabih Python Course But In Python3
 This Tool Use Scapy Package To Sniff And Get Data!
-It Will Sniff Any Data Not Just Web Data On HTTP Protocol You Can Add A Filter
+It Will Sniff Any Data Not Just Web Data On HTTP Protocol You Can Add A Filter >> Nah I Was Wrong Sorry!
 Feel Free TO Edit It Is Yours!
 I Will Clean The Code On That Update And Add Some Things!
 I Have Explain The Code On Some Comments
