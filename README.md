@@ -4,6 +4,7 @@
 ```
 git clone https://github.com/DEMON1A/Packet-Sniffer
 cd Packet-Sniffer
+chmod +x PacketSniffer.py
 python3 PacketSniffer.py
 ```
 # Usage
