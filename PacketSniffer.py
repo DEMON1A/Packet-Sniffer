@@ -15,7 +15,9 @@ from scapy.layers import http
 def SmallBanner():
 	Some = "\t\t\t\t\t\t\t"
 	Banner = Some + "[+] << PACKET-SNIFFER >> [+]"
+	Other = Some + "InterFace == " + InterFace
 	print(Banner)
+	print(Other)
 
 # Get Inputs First!
 PossibleLoginList = []
