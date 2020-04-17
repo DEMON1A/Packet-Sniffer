@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 '''
 This Tool Realeted To Zaid Sabih Python Course But In Python3
 This Tool Use Scapy Package To Sniff And Get Data!
