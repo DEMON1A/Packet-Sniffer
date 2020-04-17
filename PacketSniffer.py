@@ -24,6 +24,7 @@ PossibleLoginList = []
 InterFace = input("\n[+]Interface: ") # EX: eth0 , wlan0
 
 if InterFace == '':
+	print("No InterFace Has Set! So I Set The Interface To 'eth0' For You..\n")
 	InterFace = "eth0"
 else:
 	pass
