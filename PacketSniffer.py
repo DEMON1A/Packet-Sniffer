@@ -19,7 +19,12 @@ def SmallBanner():
 
 # Get Inputs First!
 PossibleLoginList = []
-InterFace = input("\n[+] Enter Interface: ") # EX: eth0 , wlan0
+InterFace = input("\n[+]Interface: ") # EX: eth0 , wlan0
+
+if InterFace == '':
+	InterFace = "eth0"
+else:
+	pass
 
 def StartSniffData(NetowrkInterface):
 	scapy.sniff(iface=NetowrkInterface,store=False,prn=SniffNetworkTrafic) # Start Sniff With Selected InterFace Here
