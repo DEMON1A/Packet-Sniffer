@@ -37,7 +37,7 @@ def GetDataFromHTTP(packet): # Get Data From HTTP Requests And Responses If You 
 def GetLoginDataFromSites(packet):
 	if packet.haslayer(scapy.Raw):
 		DataLoaded = packet[scapy.Raw].load
-		KeyWords = ["username","login","password","user","pass"] # You Can Add More KeyWords Here!
+		KeyWords = ["username","login","password","user","pass","admin","passwd","administrator"] # You Can Add More KeyWords Here!
 		for LoginKeyWord in KeyWords:
 			if LoginKeyWord in DataLoaded:
 				return DataLoaded
